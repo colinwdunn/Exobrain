@@ -49,6 +49,8 @@
 #pragma mark - Private methods
 
 - (void)setup {
+    self.userInteractionEnabled = YES;
+    
     [[NSBundle mainBundle] loadNibNamed:@"NodeView" owner:self options:nil];
     self.contentView.frame = self.bounds;
     [self addSubview:self.contentView];
@@ -63,6 +65,14 @@
         self.center = CGPointMake(touchCenter.x - self.touchOffset.width, touchCenter.y - self.touchOffset.height);
     } else if (gesterRecognizer.state == UIGestureRecognizerStateEnded){
         //Do whatever You want on end of gesture
+    }
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if ([self pointInside:point withEvent:event]) {
+        return self;
+    } else {
+        return [super hitTest:point withEvent:event];
     }
 }
 

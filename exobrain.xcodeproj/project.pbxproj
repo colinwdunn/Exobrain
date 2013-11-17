@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422299121837059C00346B12 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 422299111837059C00346B12 /* Node.m */; };
+		4222991918370C0C00346B12 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4222991818370C0C00346B12 /* CanvasView.m */; };
+		4222991C18394CA000346B12 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4222991B18394CA000346B12 /* SettingsViewController.m */; };
 		4269D6511826D0DC00783C19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4269D6501826D0DC00783C19 /* Foundation.framework */; };
 		4269D6531826D0DC00783C19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4269D6521826D0DC00783C19 /* CoreGraphics.framework */; };
 		4269D6551826D0DC00783C19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4269D6541826D0DC00783C19 /* UIKit.framework */; };
@@ -36,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		422299101837059C00346B12 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		422299111837059C00346B12 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		4222991718370C0C00346B12 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		4222991818370C0C00346B12 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		4222991A18394CA000346B12 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		4222991B18394CA000346B12 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		4269D64D1826D0DC00783C19 /* exobrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exobrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4269D6501826D0DC00783C19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4269D6521826D0DC00783C19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +93,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4222990F1837058500346B12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				422299101837059C00346B12 /* Node.h */,
+				422299111837059C00346B12 /* Node.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		42229913183705AD00346B12 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4269D68B1826D3D100783C19 /* NodeView.h */,
+				4269D68C1826D3D100783C19 /* NodeView.m */,
+				4269D68E1826D55300783C19 /* NodeView.xib */,
+				4222991718370C0C00346B12 /* CanvasView.h */,
+				4222991818370C0C00346B12 /* CanvasView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		42229914183705B800346B12 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4269D6851826D14A00783C19 /* CanvasViewController.h */,
+				4269D6861826D14A00783C19 /* CanvasViewController.m */,
+				4222991A18394CA000346B12 /* SettingsViewController.h */,
+				4222991B18394CA000346B12 /* SettingsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4269D6441826D0DC00783C19 = {
 			isa = PBXGroup;
 			children = (
@@ -117,16 +158,14 @@
 		4269D6561826D0DC00783C19 /* exobrain */ = {
 			isa = PBXGroup;
 			children = (
+				42229914183705B800346B12 /* Controllers */,
+				42229913183705AD00346B12 /* Views */,
+				4222990F1837058500346B12 /* Model */,
 				4269D65F1826D0DC00783C19 /* AppDelegate.h */,
 				4269D6601826D0DC00783C19 /* AppDelegate.m */,
 				4269D6681826D0DC00783C19 /* Images.xcassets */,
 				4269D6571826D0DC00783C19 /* Supporting Files */,
-				4269D6851826D14A00783C19 /* CanvasViewController.h */,
-				4269D6861826D14A00783C19 /* CanvasViewController.m */,
 				4269D6891826D1FC00783C19 /* Main.storyboard */,
-				4269D68B1826D3D100783C19 /* NodeView.h */,
-				4269D68C1826D3D100783C19 /* NodeView.m */,
-				4269D68E1826D55300783C19 /* NodeView.xib */,
 			);
 			path = exobrain;
 			sourceTree = "<group>";
@@ -207,6 +246,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = colindunn;
 				TargetAttributes = {
+					4269D64C1826D0DC00783C19 = {
+						DevelopmentTeam = 86C6U2J5JU;
+					};
 					4269D66D1826D0DC00783C19 = {
 						TestTargetID = 4269D64C1826D0DC00783C19;
 					};
@@ -258,10 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422299121837059C00346B12 /* Node.m in Sources */,
 				4269D6871826D14A00783C19 /* CanvasViewController.m in Sources */,
+				4222991918370C0C00346B12 /* CanvasView.m in Sources */,
 				4269D6611826D0DC00783C19 /* AppDelegate.m in Sources */,
 				4269D68D1826D3D100783C19 /* NodeView.m in Sources */,
 				4269D65D1826D0DC00783C19 /* main.m in Sources */,
+				4222991C18394CA000346B12 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,11 +425,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "exobrain/exobrain-Prefix.pch";
 				INFOPLIST_FILE = "exobrain/exobrain-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,11 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "exobrain/exobrain-Prefix.pch";
 				INFOPLIST_FILE = "exobrain/exobrain-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
