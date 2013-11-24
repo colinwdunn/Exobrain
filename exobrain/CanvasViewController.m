@@ -52,7 +52,10 @@
     UITapGestureRecognizer *gestureRecognizer = (UITapGestureRecognizer *)sender;
     CGPoint touchCenter = [gestureRecognizer locationInView:self.view];
     
-//    [self createNodeWithCenter:touchCenter];
+    UIView *touchedView = [self.view hitTest:touchCenter withEvent:nil];
+    if (![touchedView isKindOfClass:[NodeView class]]) {
+        [self createNodeWithCenter:touchCenter];
+    }
 }
 
 - (void)createRootNode {
