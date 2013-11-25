@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NodeView.h"
 
-@interface CanvasViewController : UIViewController
+@interface CanvasViewController : UIViewController <NodeViewDelegate>
 
 @end

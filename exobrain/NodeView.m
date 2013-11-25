@@ -58,6 +58,13 @@
 
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)gesterRecognizer {
     if (gesterRecognizer.state == UIGestureRecognizerStateBegan) {
+        // Note to Colin: Long press has been engaged!
+//        [UIView animateWithDuration:0.250 animations:^{
+//            // Things that will automatically animate!
+              //   frame
+              //   backgroundColor
+//        }];
+        
         CGPoint touchCenter = [gesterRecognizer locationInView:self];
         self.touchOffset = CGSizeMake(touchCenter.x - self.frame.size.width / 2, touchCenter.y - self.frame.size.height / 2);
     } else if (gesterRecognizer.state == UIGestureRecognizerStateChanged) {
@@ -66,7 +73,7 @@
         self.node.center = self.center;
         [self.superview setNeedsDisplay];
     } else if (gesterRecognizer.state == UIGestureRecognizerStateEnded){
-        // Do whatever You want on end of gesture
+        // Note to Colin: Long press has been engaged!
     }
 }
 

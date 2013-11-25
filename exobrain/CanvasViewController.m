@@ -91,4 +91,18 @@
     return node;
 }
 
+#pragma mark - NodeView Delegate methods
+
+- (void)nodeView:(NodeView *)nodeView didDragToPoint:(CGPoint)point {
+    // If this is near a trash can, display the trash can.  Or hide the trash can
+}
+
+- (void)nodeView:(NodeView *)nodeView didFinishDraggingToPoint:(CGPoint)point {
+    // Delete the node
+    //   - Remove the node model object from self.nodes
+    //   - Update all nodes and remove node from linkedNodes, if applicable
+    //   - Update canvas view (setNeedsDisplay)
+    //   - Remove nodeView from the superview.
+}
+
 @end
