@@ -8,6 +8,7 @@
 
 #import "CanvasView.h"
 #import "NodeView.h"
+#import "Node.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface CanvasView ()
@@ -31,12 +32,23 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [[UIColor blueColor] set];
+    
+    // Draws a user creating a new connection
     if (self.linking) {
-        CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextMoveToPoint(context, self.sourceNode.center.x, self.sourceNode.center.y);
         CGContextAddLineToPoint(context, self.currentTouchPosition.x, self.currentTouchPosition.y);
-        [[UIColor blueColor] set];
         CGContextStrokePath(context);
+    }
+    
+    // Draws existing connections
+    for (Node *node in self.nodes) {
+        for (Node *linkedNode in node.linkedNodes) {
+            CGContextMoveToPoint(context, node.center.x, node.center.y);
+            CGContextAddLineToPoint(context, linkedNode.center.x, linkedNode.center.y);
+            CGContextStrokePath(context);
+        }
     }
 }
 
@@ -71,6 +83,14 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    
+    UIView *touchedView = [self hitTest:location withEvent:event];
+    if ([touchedView isKindOfClass:[NodeView class]]) {
+        [self.sourceNode.node linkToNode:((NodeView *)touchedView).node];
+    }
+    
     NSLog(@"touches ended");
     self.sourceNode = nil;
 }

@@ -10,4 +10,6 @@
 
 @interface CanvasView : UIScrollView
 
+@property (nonatomic, strong) NSMutableArray *nodes;
+
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Node.h"
 
 @interface NodeView : UIView
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (nonatomic, strong) Node *node;
 
 @end

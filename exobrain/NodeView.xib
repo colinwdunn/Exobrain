@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NodeView">
             <connections>
                 <outlet property="contentView" destination="1" id="90l-tU-YT1"/>
+                <outlet property="textField" destination="QZD-x2-oyb" id="9rz-1I-CtI"/>
                 <outletCollection property="gestureRecognizers" destination="RfR-WH-xiF" id="26S-E2-Srw"/>
             </connections>
         </placeholder>

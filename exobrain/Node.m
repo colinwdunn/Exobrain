@@ -10,4 +10,18 @@
 
 @implementation Node
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.linkedNodes = [NSMutableSet set];
+    }
+    
+    return self;
+}
+
+- (void)linkToNode:(Node *)node {
+    [self.linkedNodes addObject:node];
+    [node.linkedNodes addObject:self];
+}
+
 @end

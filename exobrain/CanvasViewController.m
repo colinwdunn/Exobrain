@@ -19,6 +19,7 @@
 - (IBAction)onTap:(id)sender;
 - (void)createRootNode;
 - (void)createNodeWithCenter:(CGPoint)center;
+- (Node *)createNodeWithCenter:(CGPoint)center string:(NSString *)string;
 
 @end
 
@@ -36,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CanvasView *canvasView = (CanvasView *)self.view;
+    canvasView.nodes = self.nodes;
     
     [self createRootNode];
 }
@@ -59,18 +62,33 @@
 }
 
 - (void)createRootNode {
-    [self createNodeWithCenter:self.view.center];
+    Node *one = [self createNodeWithCenter:self.view.center string:@"One"];
+    Node *two = [self createNodeWithCenter:CGPointMake(100, 100) string:@"Two"];
+    Node *three = [self createNodeWithCenter:CGPointMake(300, 300) string:@"Three"];
+    
+    // Add links
+    [one linkToNode:three];
+    [two linkToNode:three];
 }
 
 - (void)createNodeWithCenter:(CGPoint)center {
+    [self createNodeWithCenter:center string:@""];
+}
+
+- (Node *)createNodeWithCenter:(CGPoint)center string:(NSString *)string {
     Node *node = [[Node alloc] init];
     node.center = center;
+    node.text = string;
     [self.nodes addObject:node];
     
     NodeView *view = [[NodeView alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    view.node = node;
+    view.textField.text = string;
     view.center = center;
     [self.nodeViews addObject:view];
     [self.view addSubview:view];
+    
+    return node;
 }
 
 @end

@@ -15,4 +15,6 @@
 @property (nonatomic, assign) CGPoint center;
 @property (nonatomic, strong) NSMutableSet *linkedNodes;
 
+- (void)linkToNode:(Node *)node;
+
 @end

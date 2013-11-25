@@ -63,6 +63,8 @@
     } else if (gesterRecognizer.state == UIGestureRecognizerStateChanged) {
         CGPoint touchCenter = [gesterRecognizer locationInView:self.superview];
         self.center = CGPointMake(touchCenter.x - self.touchOffset.width, touchCenter.y - self.touchOffset.height);
+        self.node.center = self.center;
+        [self.superview setNeedsDisplay];
     } else if (gesterRecognizer.state == UIGestureRecognizerStateEnded){
         // Do whatever You want on end of gesture
     }
