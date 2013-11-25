@@ -33,12 +33,9 @@
 {
     if (self.linking) {
         CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetAllowsAntialiasing(context, YES);
-        CGContextSetShouldAntialias(context, YES);
         CGContextMoveToPoint(context, self.sourceNode.center.x, self.sourceNode.center.y);
         CGContextAddLineToPoint(context, self.currentTouchPosition.x, self.currentTouchPosition.y);
         [[UIColor blueColor] set];
-
         CGContextStrokePath(context);
     }
 }
