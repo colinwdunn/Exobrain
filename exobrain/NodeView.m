@@ -83,7 +83,9 @@
         self.node.center = self.center;
         [self.superview setNeedsDisplay];
     } else if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        // Note to Colin: Long press has been engaged!
+        NSLog(@"User lifted their finger.  Colin, size it back to what it was!");
+    } else if (gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
+        NSLog(@"Something cancelled the gesture.  Colin, if necessary, size it back to what it was!");
     }
 }
 
