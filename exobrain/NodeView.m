@@ -56,23 +56,33 @@
     [self addSubview:self.contentView];
 }
 
-- (IBAction)onLongPress:(UILongPressGestureRecognizer *)gesterRecognizer {
-    if (gesterRecognizer.state == UIGestureRecognizerStateBegan) {
+- (IBAction)onLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         // Note to Colin: Long press has been engaged!
+        
+        [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:1 animations:^{
+            //Makes it fuzzy
+            //[gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], 1.2, 1.2);
+            //Origin needs to be offset
+            self.frame = CGRectMake(self.frame.origin.x - (self.frame.size.width * 0.1), self.frame.origin.y  - (self.frame.size.height * 0.1), self.frame.size.width * 1.2, self.frame.size.height * 1.2);
+            self.textField.minimumFontSize = self.textField.minimumFontSize * 1.2;
+        }completion:^(BOOL finished){
+            //Finished
+        }];
 //        [UIView animateWithDuration:0.250 animations:^{
 //            // Things that will automatically animate!
               //   frame
               //   backgroundColor
 //        }];
         
-        CGPoint touchCenter = [gesterRecognizer locationInView:self];
+        CGPoint touchCenter = [gestureRecognizer locationInView:self];
         self.touchOffset = CGSizeMake(touchCenter.x - self.frame.size.width / 2, touchCenter.y - self.frame.size.height / 2);
-    } else if (gesterRecognizer.state == UIGestureRecognizerStateChanged) {
-        CGPoint touchCenter = [gesterRecognizer locationInView:self.superview];
+    } else if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint touchCenter = [gestureRecognizer locationInView:self.superview];
         self.center = CGPointMake(touchCenter.x - self.touchOffset.width, touchCenter.y - self.touchOffset.height);
         self.node.center = self.center;
         [self.superview setNeedsDisplay];
-    } else if (gesterRecognizer.state == UIGestureRecognizerStateEnded){
+    } else if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
         // Note to Colin: Long press has been engaged!
     }
 }
