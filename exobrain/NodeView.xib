@@ -42,7 +42,7 @@
         </pongPressGestureRecognizer>
         <tapGestureRecognizer id="agG-h4-OYb">
             <connections>
-                <action selector="onTap:" destination="-1" id="dDO-Ga-XXZ"/>
+                <action selector="onTap:" destination="-1" id="MqC-IY-lGa"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

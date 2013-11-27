@@ -63,6 +63,11 @@ float borderRadius = 3.0f;
     [self addSubview:self.contentView];
 }
 
+- (IBAction)onTap:(UITapGestureRecognizer *)gestureRecognizer {
+//    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"Tap began");
+//    }
+}
 
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
