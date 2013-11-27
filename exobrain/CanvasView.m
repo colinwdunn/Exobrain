@@ -27,7 +27,7 @@
     if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
                           saturation:s
-                          brightness:MIN(b * 1.2, 1.0)
+                          brightness:MIN(b * 1.3, 1.0)
                                alpha:a];
     return nil;
 }
@@ -38,7 +38,7 @@
     if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
                           saturation:s
-                          brightness:b * 0.80
+                          brightness:b * 0.75
                                alpha:a];
     return nil;
 }
@@ -122,6 +122,9 @@
     }
     
     NSLog(@"touches ended");
+    UIColor *lighterColor = [self lighterColorForColor:self.sourceNode.backgroundColor];
+    self.sourceNode.backgroundColor = lighterColor;
+    
     self.sourceNode = nil;
 }
 
