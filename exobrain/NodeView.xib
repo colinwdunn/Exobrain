@@ -24,7 +24,6 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" red="0.86274509803921573" green="0.18431372549019609" blue="0.34509803921568627" alpha="1" colorSpace="deviceRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="QZD-x2-oyb" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="5" id="TDX-Vt-dky"/>
@@ -32,11 +31,19 @@
                 <constraint firstAttribute="centerY" secondItem="QZD-x2-oyb" secondAttribute="centerY" id="p8M-hg-Imb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="agG-h4-OYb" appends="YES" id="sbf-wg-5g8"/>
+            </connections>
         </view>
         <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="RfR-WH-xiF">
             <connections>
                 <action selector="onLongPress:" destination="-1" id="eTr-VN-zst"/>
             </connections>
         </pongPressGestureRecognizer>
+        <tapGestureRecognizer id="agG-h4-OYb">
+            <connections>
+                <action selector="onTap:" destination="-1" id="dDO-Ga-XXZ"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

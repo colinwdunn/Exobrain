@@ -247,7 +247,7 @@
 				ORGANIZATIONNAME = colindunn;
 				TargetAttributes = {
 					4269D64C1826D0DC00783C19 = {
-						DevelopmentTeam = 86C6U2J5JU;
+						DevelopmentTeam = 6NP8N28385;
 					};
 					4269D66D1826D0DC00783C19 = {
 						TestTargetID = 4269D64C1826D0DC00783C19;

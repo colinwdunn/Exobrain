@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (assign, nonatomic) CGSize touchOffset;
+@property (nonatomic, assign) BOOL isScaled;
 
 - (IBAction)onLongPress:(id)sender;
 
@@ -19,11 +20,17 @@
 
 @implementation NodeView
 
+float scaleFactor = 1.1f;
+float borderRadius = 3.0f;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setup];
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = borderRadius;
+        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -56,24 +63,18 @@
     [self addSubview:self.contentView];
 }
 
+
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        // Note to Colin: Long press has been engaged!
-        
-        [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:1 animations:^{
-            //Makes it fuzzy
-            //[gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], 1.2, 1.2);
-            //Origin needs to be offset
-            self.frame = CGRectMake(self.frame.origin.x - (self.frame.size.width * 0.1), self.frame.origin.y  - (self.frame.size.height * 0.1), self.frame.size.width * 1.2, self.frame.size.height * 1.2);
-            self.textField.minimumFontSize = self.textField.minimumFontSize * 1.2;
+        //Long Press Engaged]
+        [UIView animateWithDuration:0.75 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+            [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], scaleFactor, scaleFactor);
+//            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width * scaleFactor, self.frame.size.height * scaleFactor);
+//            UIFont *scaledFont = [self.textField.font fontWithSize:20.0 * scaleFactor];
+//            self.textField.font = scaledFont;
         }completion:^(BOOL finished){
-            //Finished
+            //Animation Finished
         }];
-//        [UIView animateWithDuration:0.250 animations:^{
-//            // Things that will automatically animate!
-              //   frame
-              //   backgroundColor
-//        }];
         
         CGPoint touchCenter = [gestureRecognizer locationInView:self];
         self.touchOffset = CGSizeMake(touchCenter.x - self.frame.size.width / 2, touchCenter.y - self.frame.size.height / 2);
@@ -84,6 +85,11 @@
         [self.superview setNeedsDisplay];
     } else if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
         NSLog(@"User lifted their finger.  Colin, size it back to what it was!");
+        [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+            [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], 1.0 / scaleFactor, 1.0 / scaleFactor);
+        }completion:^(BOOL finished){
+            //Animation Finished
+        }];
     } else if (gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
         NSLog(@"Something cancelled the gesture.  Colin, if necessary, size it back to what it was!");
     }

@@ -21,6 +21,28 @@
 
 @implementation CanvasView
 
+- (UIColor *)lighterColorForColor:(UIColor *)c
+{
+    CGFloat h, s, b, a;
+    if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
+        return [UIColor colorWithHue:h
+                          saturation:s
+                          brightness:b / 0.75
+                               alpha:a];
+    return nil;
+}
+
+- (UIColor *)darkerColorForColor:(UIColor *)c
+{
+    CGFloat h, s, b, a;
+    if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
+        return [UIColor colorWithHue:h
+                          saturation:s
+                          brightness:b / 0.75
+                               alpha:a];
+    return nil;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -63,6 +85,10 @@
         NSLog(@"I am inside a node");
         self.sourceNode = (NodeView *)touchedView;
         self.currentTouchPosition = self.sourceNode.center;
+        
+        UIColor *darkerColor = [self darkerColorForColor:self.sourceNode.backgroundColor];
+        self.sourceNode.backgroundColor = darkerColor;
+        
     } else if ([touchedView isKindOfClass:[CanvasView class]]) {
         NSLog(@"I am inside the canvas");
     }
@@ -80,6 +106,9 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"touches cancelled");
     self.sourceNode = nil;
+    
+    UIColor *lighterColor = [self lighterColorForColor:self.sourceNode.backgroundColor];
+    self.sourceNode.backgroundColor = lighterColor;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
