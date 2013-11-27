@@ -30,7 +30,7 @@ float borderRadius = 3.0f;
         [self setup];
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = borderRadius;
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor colorWithRed:23/255.0 green:135/255.0 blue:251/255.0 alpha:1.0];
     }
     return self;
 }
@@ -63,11 +63,11 @@ float borderRadius = 3.0f;
     [self addSubview:self.contentView];
 }
 
-- (IBAction)onTap:(UITapGestureRecognizer *)gestureRecognizer {
+//- (IBAction)onTap:(UIGestureRecognizer *)gestureRecognizer {
 //    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"Tap began");
+//        NSLog(@"Tap began");
 //    }
-}
+//}
 
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {

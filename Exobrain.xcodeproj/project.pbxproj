@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8154361845A571007993E4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8154351845A571007993E4 /* Icon@2x.png */; };
 		422299121837059C00346B12 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 422299111837059C00346B12 /* Node.m */; };
 		4222991918370C0C00346B12 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4222991818370C0C00346B12 /* CanvasView.m */; };
 		4222991C18394CA000346B12 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4222991B18394CA000346B12 /* SettingsViewController.m */; };
@@ -39,26 +40,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D8154351845A571007993E4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		422299101837059C00346B12 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		422299111837059C00346B12 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 		4222991718370C0C00346B12 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
 		4222991818370C0C00346B12 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		4222991A18394CA000346B12 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		4222991B18394CA000346B12 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		4269D64D1826D0DC00783C19 /* exobrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exobrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4269D64D1826D0DC00783C19 /* Exobrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exobrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4269D6501826D0DC00783C19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4269D6521826D0DC00783C19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4269D6541826D0DC00783C19 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4269D6581826D0DC00783C19 /* exobrain-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exobrain-Info.plist"; sourceTree = "<group>"; };
+		4269D6581826D0DC00783C19 /* Exobrain.temp_caseinsensitive_rename-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Exobrain.temp_caseinsensitive_rename-Info.plist"; sourceTree = "<group>"; };
 		4269D65A1826D0DC00783C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4269D65C1826D0DC00783C19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4269D65E1826D0DC00783C19 /* exobrain-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "exobrain-Prefix.pch"; sourceTree = "<group>"; };
+		4269D65E1826D0DC00783C19 /* Exobrain.temp_caseinsensitive_rename-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exobrain.temp_caseinsensitive_rename-Prefix.pch"; sourceTree = "<group>"; };
 		4269D65F1826D0DC00783C19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4269D6601826D0DC00783C19 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4269D6681826D0DC00783C19 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4269D66E1826D0DC00783C19 /* exobrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exobrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4269D66E1826D0DC00783C19 /* Exobrain.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Exobrain.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4269D66F1826D0DC00783C19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4269D6771826D0DC00783C19 /* exobrainTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exobrainTests-Info.plist"; sourceTree = "<group>"; };
+		4269D6771826D0DC00783C19 /* Exobrain.temp_caseinsensitive_renameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Exobrain.temp_caseinsensitive_renameTests-Info.plist"; sourceTree = "<group>"; };
 		4269D6791826D0DC00783C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4269D67B1826D0DC00783C19 /* exobrainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exobrainTests.m; sourceTree = "<group>"; };
 		4269D6851826D14A00783C19 /* CanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
@@ -132,14 +134,15 @@
 				4269D6751826D0DC00783C19 /* exobrainTests */,
 				4269D64F1826D0DC00783C19 /* Frameworks */,
 				4269D64E1826D0DC00783C19 /* Products */,
+				3D8154351845A571007993E4 /* Icon@2x.png */,
 			);
 			sourceTree = "<group>";
 		};
 		4269D64E1826D0DC00783C19 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4269D64D1826D0DC00783C19 /* exobrain.app */,
-				4269D66E1826D0DC00783C19 /* exobrainTests.xctest */,
+				4269D64D1826D0DC00783C19 /* Exobrain.app */,
+				4269D66E1826D0DC00783C19 /* Exobrain.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,10 +176,10 @@
 		4269D6571826D0DC00783C19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4269D6581826D0DC00783C19 /* exobrain-Info.plist */,
+				4269D6581826D0DC00783C19 /* Exobrain.temp_caseinsensitive_rename-Info.plist */,
 				4269D6591826D0DC00783C19 /* InfoPlist.strings */,
 				4269D65C1826D0DC00783C19 /* main.m */,
-				4269D65E1826D0DC00783C19 /* exobrain-Prefix.pch */,
+				4269D65E1826D0DC00783C19 /* Exobrain.temp_caseinsensitive_rename-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 		4269D6761826D0DC00783C19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4269D6771826D0DC00783C19 /* exobrainTests-Info.plist */,
+				4269D6771826D0DC00783C19 /* Exobrain.temp_caseinsensitive_renameTests-Info.plist */,
 				4269D6781826D0DC00783C19 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -202,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4269D64C1826D0DC00783C19 /* exobrain */ = {
+		4269D64C1826D0DC00783C19 /* Exobrain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4269D67F1826D0DC00783C19 /* Build configuration list for PBXNativeTarget "exobrain" */;
+			buildConfigurationList = 4269D67F1826D0DC00783C19 /* Build configuration list for PBXNativeTarget "Exobrain" */;
 			buildPhases = (
 				4269D6491826D0DC00783C19 /* Sources */,
 				4269D64A1826D0DC00783C19 /* Frameworks */,
@@ -214,14 +217,14 @@
 			);
 			dependencies = (
 			);
-			name = exobrain;
+			name = Exobrain;
 			productName = exobrain;
-			productReference = 4269D64D1826D0DC00783C19 /* exobrain.app */;
+			productReference = 4269D64D1826D0DC00783C19 /* Exobrain.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4269D66D1826D0DC00783C19 /* exobrainTests */ = {
+		4269D66D1826D0DC00783C19 /* ExobrainTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4269D6821826D0DC00783C19 /* Build configuration list for PBXNativeTarget "exobrainTests" */;
+			buildConfigurationList = 4269D6821826D0DC00783C19 /* Build configuration list for PBXNativeTarget "ExobrainTests" */;
 			buildPhases = (
 				4269D66A1826D0DC00783C19 /* Sources */,
 				4269D66B1826D0DC00783C19 /* Frameworks */,
@@ -232,9 +235,9 @@
 			dependencies = (
 				4269D6741826D0DC00783C19 /* PBXTargetDependency */,
 			);
-			name = exobrainTests;
+			name = ExobrainTests;
 			productName = exobrainTests;
-			productReference = 4269D66E1826D0DC00783C19 /* exobrainTests.xctest */;
+			productReference = 4269D66E1826D0DC00783C19 /* Exobrain.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4269D6481826D0DC00783C19 /* Build configuration list for PBXProject "exobrain" */;
+			buildConfigurationList = 4269D6481826D0DC00783C19 /* Build configuration list for PBXProject "Exobrain" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -267,8 +270,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4269D64C1826D0DC00783C19 /* exobrain */,
-				4269D66D1826D0DC00783C19 /* exobrainTests */,
+				4269D64C1826D0DC00783C19 /* Exobrain */,
+				4269D66D1826D0DC00783C19 /* ExobrainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,6 +285,7 @@
 				4269D65B1826D0DC00783C19 /* InfoPlist.strings in Resources */,
 				4269D68F1826D55300783C19 /* NodeView.xib in Resources */,
 				4269D68A1826D1FC00783C19 /* Main.storyboard in Resources */,
+				3D8154361845A571007993E4 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +327,7 @@
 /* Begin PBXTargetDependency section */
 		4269D6741826D0DC00783C19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4269D64C1826D0DC00783C19 /* exobrain */;
+			target = 4269D64C1826D0DC00783C19 /* Exobrain */;
 			targetProxy = 4269D6731826D0DC00783C19 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,10 +432,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "exobrain/exobrain-Prefix.pch";
-				INFOPLIST_FILE = "exobrain/exobrain-Info.plist";
+				GCC_PREFIX_HEADER = "exobrain/Exobrain-Prefix.pch";
+				INFOPLIST_FILE = "exobrain/Exobrain-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Exobrain;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -446,10 +450,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "exobrain/exobrain-Prefix.pch";
-				INFOPLIST_FILE = "exobrain/exobrain-Info.plist";
+				GCC_PREFIX_HEADER = "exobrain/Exobrain-Prefix.pch";
+				INFOPLIST_FILE = "exobrain/Exobrain-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Exobrain;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -472,8 +476,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "exobrainTests/exobrainTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "exobrainTests/Exobrain-Info.plist";
+				PRODUCT_NAME = Exobrain.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -491,8 +495,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "exobrain/exobrain-Prefix.pch";
-				INFOPLIST_FILE = "exobrainTests/exobrainTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "exobrainTests/Exobrain-Info.plist";
+				PRODUCT_NAME = Exobrain.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -501,7 +505,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4269D6481826D0DC00783C19 /* Build configuration list for PBXProject "exobrain" */ = {
+		4269D6481826D0DC00783C19 /* Build configuration list for PBXProject "Exobrain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4269D67D1826D0DC00783C19 /* Debug */,
@@ -510,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4269D67F1826D0DC00783C19 /* Build configuration list for PBXNativeTarget "exobrain" */ = {
+		4269D67F1826D0DC00783C19 /* Build configuration list for PBXNativeTarget "Exobrain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4269D6801826D0DC00783C19 /* Debug */,
@@ -519,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4269D6821826D0DC00783C19 /* Build configuration list for PBXNativeTarget "exobrainTests" */ = {
+		4269D6821826D0DC00783C19 /* Build configuration list for PBXNativeTarget "ExobrainTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4269D6831826D0DC00783C19 /* Debug */,
