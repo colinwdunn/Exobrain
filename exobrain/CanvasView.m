@@ -56,6 +56,7 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 1.5);
     [[UIColor colorWithRed:23/255.0 green:135/255.0 blue:251/255.0 alpha:1.0] set];
     
     // Draws a user creating a new connection
