@@ -48,6 +48,7 @@
     if (self) {
         self.alwaysBounceHorizontal = YES;
         self.alwaysBounceVertical = YES;
+        self.delaysContentTouches = NO;
     }
     return self;
 }
