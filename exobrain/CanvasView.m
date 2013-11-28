@@ -102,6 +102,7 @@
     NSLog(@"touches cancelled");
     
     self.sourceNode.backgroundColor = self.savedColor;
+    self.savedColor = nil;
     self.sourceNode = nil;
 }
 
@@ -117,6 +118,7 @@
     NSLog(@"touches ended");
 
     self.sourceNode.backgroundColor = self.savedColor;
+    self.savedColor = nil;
     self.sourceNode = nil;
 }
 
