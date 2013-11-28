@@ -16,23 +16,14 @@
 @property (nonatomic, assign) BOOL linking;
 @property (nonatomic, strong) NodeView *sourceNode;
 @property (nonatomic, assign) CGPoint currentTouchPosition;
+@property (nonatomic, strong) UIColor *savedColor;
+@property (nonatomic, strong) UIColor *pressedColor;
 
 @end
 
 @implementation CanvasView
 
-- (UIColor *)lighterColorForColor:(UIColor *)c
-{
-    CGFloat h, s, b, a;
-    if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
-        return [UIColor colorWithHue:h
-                          saturation:s
-                          brightness:MIN(b * 1.3, 1.0)
-                               alpha:a];
-    return nil;
-}
-
-- (UIColor *)darkerColorForColor:(UIColor *)c
+- (UIColor *)pressedColorForColor:(UIColor *)c
 {
     CGFloat h, s, b, a;
     if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
@@ -40,6 +31,7 @@
                           saturation:s
                           brightness:b * 0.75
                                alpha:a];
+    
     return nil;
 }
 
@@ -88,8 +80,9 @@
         self.sourceNode = (NodeView *)touchedView;
         self.currentTouchPosition = self.sourceNode.center;
         
-        UIColor *darkerColor = [self darkerColorForColor:self.sourceNode.backgroundColor];
-        self.sourceNode.backgroundColor = darkerColor;
+        self.savedColor = self.sourceNode.backgroundColor;
+        self.pressedColor = [self pressedColorForColor:self.sourceNode.backgroundColor];
+        self.sourceNode.backgroundColor = self.pressedColor;
         
     } else if ([touchedView isKindOfClass:[CanvasView class]]) {
         NSLog(@"I am inside the canvas");
@@ -108,9 +101,7 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"touches cancelled");
     
-    UIColor *lighterColor = [self lighterColorForColor:self.sourceNode.backgroundColor];
-    self.sourceNode.backgroundColor = lighterColor;
-    
+    self.sourceNode.backgroundColor = self.savedColor;
     self.sourceNode = nil;
 }
 
@@ -124,9 +115,8 @@
     }
     
     NSLog(@"touches ended");
-    UIColor *lighterColor = [self lighterColorForColor:self.sourceNode.backgroundColor];
-    self.sourceNode.backgroundColor = lighterColor;
-    
+
+    self.sourceNode.backgroundColor = self.savedColor;
     self.sourceNode = nil;
 }
 
