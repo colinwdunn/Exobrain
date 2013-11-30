@@ -23,18 +23,6 @@
 
 @implementation CanvasView
 
-- (UIColor *)pressedColorForColor:(UIColor *)c
-{
-    CGFloat h, s, b, a;
-    if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
-        return [UIColor colorWithHue:h
-                          saturation:s
-                          brightness:b * 0.75
-                               alpha:a];
-    
-    return nil;
-}
-
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -93,6 +81,7 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"touches moves");
+    
     UITouch *touch = [touches anyObject];
     self.currentTouchPosition = [touch locationInView:self];
     [self setNeedsDisplay];
@@ -107,6 +96,8 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"touches ended");
+    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:self];
     
@@ -114,8 +105,6 @@
     if ([touchedView isKindOfClass:[NodeView class]]) {
         [self.sourceNode.node linkToNode:((NodeView *)touchedView).node];
     }
-    
-    NSLog(@"touches ended");
 
     self.sourceNode.backgroundColor = self.savedColor;
     self.savedColor = nil;
@@ -135,6 +124,18 @@
         self.scrollEnabled = YES;
     }
     [self setNeedsDisplay];
+}
+
+- (UIColor *)pressedColorForColor:(UIColor *)c
+{
+    CGFloat h, s, b, a;
+    if ([c getHue:&h saturation:&s brightness:&b alpha:&a])
+        return [UIColor colorWithHue:h
+                          saturation:s
+                          brightness:b * 0.75
+                               alpha:a];
+    
+    return nil;
 }
 
 @end

@@ -11,7 +11,7 @@
                     <view key="view" contentMode="scaleToFill" id="MOz-gT-tpE" customClass="CanvasView">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.025512654329999999" green="0.052747499199999999" blue="0.086694777010000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="04j-eZ-az7" appends="YES" id="20z-Ap-Z0B"/>

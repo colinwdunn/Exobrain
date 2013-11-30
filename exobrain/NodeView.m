@@ -21,16 +21,20 @@
 @implementation NodeView
 
 float scaleFactor = 1.1f;
-float borderRadius = 3.0f;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setup];
-        self.layer.masksToBounds = YES;
-        self.layer.cornerRadius = borderRadius;
         self.backgroundColor = [UIColor colorWithRed:23/255.0 green:135/255.0 blue:251/255.0 alpha:1.0];
+        
+        CALayer *layer = [CALayer layer];
+        layer.backgroundColor = [[UIColor blackColor] CGColor];
+        layer.cornerRadius = 3.0f;
+        
+        [self.layer addSublayer:layer];
+        self.layer.cornerRadius = 3.0f;
     }
     return self;
 }
@@ -74,9 +78,8 @@ float borderRadius = 3.0f;
         //Long Press Engaged]
         [UIView animateWithDuration:0.75 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], scaleFactor, scaleFactor);
-//            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width * scaleFactor, self.frame.size.height * scaleFactor);
-//            UIFont *scaledFont = [self.textField.font fontWithSize:20.0 * scaleFactor];
-//            self.textField.font = scaledFont;
+            self.layer.shadowOpacity = 0.55f;
+            self.layer.shadowRadius = 15.0f;
         }completion:^(BOOL finished){
             //Animation Finished
         }];
@@ -92,11 +95,15 @@ float borderRadius = 3.0f;
         NSLog(@"User lifted their finger.  Colin, size it back to what it was!");
         [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], 1.0 / scaleFactor, 1.0 / scaleFactor);
+            self.layer.shadowOpacity = 0.0;
+            self.layer.shadowRadius = 0.0;
         }completion:^(BOOL finished){
             //Animation Finished
         }];
     } else if (gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
         NSLog(@"Something cancelled the gesture.  Colin, if necessary, size it back to what it was!");
+        self.layer.shadowOpacity = 0.0;
+        self.layer.shadowRadius = 0.0;
     }
 }
 
