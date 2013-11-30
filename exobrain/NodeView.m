@@ -87,6 +87,7 @@ float cornerRadius = 3.0f;
             //Animation Finished
         }];
         
+        [[self superview] bringSubviewToFront:self];
         CGPoint touchCenter = [gestureRecognizer locationInView:self];
         self.touchOffset = CGSizeMake(touchCenter.x - self.frame.size.width / 2, touchCenter.y - self.frame.size.height / 2);
     } else if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
