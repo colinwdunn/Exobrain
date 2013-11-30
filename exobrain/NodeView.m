@@ -21,6 +21,7 @@
 @implementation NodeView
 
 float scaleFactor = 1.1f;
+float cornerRadius = 3.0f;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -31,10 +32,10 @@ float scaleFactor = 1.1f;
         
         CALayer *layer = [CALayer layer];
         layer.backgroundColor = [[UIColor blackColor] CGColor];
-        layer.cornerRadius = 3.0f;
+        layer.cornerRadius = cornerRadius;
         
         [self.layer addSublayer:layer];
-        self.layer.cornerRadius = 3.0f;
+        self.layer.cornerRadius = cornerRadius;
     }
     return self;
 }
@@ -78,8 +79,10 @@ float scaleFactor = 1.1f;
         //Long Press Engaged]
         [UIView animateWithDuration:0.75 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], scaleFactor, scaleFactor);
-            self.layer.shadowOpacity = 0.55f;
-            self.layer.shadowRadius = 15.0f;
+//            self.layer.shadowColor = self.backgroundColor.CGColor;
+            self.layer.shadowOffset = CGSizeMake(2, 2);
+            self.layer.shadowOpacity = 0.5f;
+            self.layer.shadowRadius = 5.0f;
         }completion:^(BOOL finished){
             //Animation Finished
         }];
@@ -92,16 +95,15 @@ float scaleFactor = 1.1f;
         self.node.center = self.center;
         [self.superview setNeedsDisplay];
     } else if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        NSLog(@"User lifted their finger.  Colin, size it back to what it was!");
+        NSLog(@"Long press ended");
         [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:5.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], 1.0 / scaleFactor, 1.0 / scaleFactor);
             self.layer.shadowOpacity = 0.0;
-            self.layer.shadowRadius = 0.0;
         }completion:^(BOOL finished){
             //Animation Finished
         }];
     } else if (gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
-        NSLog(@"Something cancelled the gesture.  Colin, if necessary, size it back to what it was!");
+        NSLog(@"Long press cancelled");
         self.layer.shadowOpacity = 0.0;
         self.layer.shadowRadius = 0.0;
     }
