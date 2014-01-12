@@ -18,8 +18,6 @@
 
 - (IBAction)onTap:(id)sender;
 - (void)createRootNode;
-- (void)createNodeWithCenter:(CGPoint)center;
-- (Node *)createNodeWithCenter:(CGPoint)center string:(NSString *)string;
 
 @end
 
@@ -44,6 +42,7 @@
     [super viewDidLoad];
     CanvasView *canvasView = (CanvasView *)self.view;
     canvasView.nodes = self.nodes;
+    canvasView.canvasViewController = self;
     
     [self createRootNode];
 }
@@ -76,8 +75,8 @@
     [two linkToNode:three];
 }
 
-- (void)createNodeWithCenter:(CGPoint)center {
-    [self createNodeWithCenter:center string:@""];
+- (Node *)createNodeWithCenter:(CGPoint)center {
+    return [self createNodeWithCenter:center string:@""];
 }
 
 - (Node *)createNodeWithCenter:(CGPoint)center string:(NSString *)string {

@@ -104,6 +104,10 @@
     UIView *touchedView = [self hitTest:location withEvent:event];
     if ([touchedView isKindOfClass:[NodeView class]]) {
         [self.sourceNode.node linkToNode:((NodeView *)touchedView).node];
+    } else {
+        // Create and connect node
+        Node *node = [self.canvasViewController createNodeWithCenter:location];
+        [self.sourceNode.node linkToNode:node];
     }
 
     self.sourceNode.backgroundColor = self.savedColor;

@@ -11,4 +11,7 @@
 
 @interface CanvasViewController : UIViewController <NodeViewDelegate>
 
+- (Node *)createNodeWithCenter:(CGPoint)center;
+- (Node *)createNodeWithCenter:(CGPoint)center string:(NSString *)string;
+
 @end
