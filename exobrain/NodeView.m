@@ -15,6 +15,7 @@
 @property (nonatomic, assign) BOOL isScaled;
 
 - (IBAction)onLongPress:(id)sender;
+- (void)sizeToFit:(NSString *)text;;
 
 @end
 
@@ -49,16 +50,35 @@ float cornerRadius = 3.0f;
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+#pragma mark - Public methods
+
+- (void)setText:(NSString *)text {
+    _text = text;
+    self.textField.text = text;
+    
+    [self sizeToFit];
 }
-*/
+
+#pragma mark - UITextField delegate methods
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    [self sizeToFit:text];
+    return YES;
+}
 
 #pragma mark - Private methods
+
+- (void)sizeToFit {
+    [self sizeToFit:self.textField.text];
+}
+
+- (void)sizeToFit:(NSString *)text {
+    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : self.textField.font}];
+    CGPoint center = self.center;
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width + 22, self.frame.size.height);
+    self.center = center;
+}
 
 - (void)setup {
     self.userInteractionEnabled = YES;
@@ -66,13 +86,9 @@ float cornerRadius = 3.0f;
     [[NSBundle mainBundle] loadNibNamed:@"NodeView" owner:self options:nil];
     self.contentView.frame = self.bounds;
     [self addSubview:self.contentView];
+    
+    self.textField.delegate = self;
 }
-
-//- (IBAction)onTap:(UIGestureRecognizer *)gestureRecognizer {
-//    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-//        NSLog(@"Tap began");
-//    }
-//}
 
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {

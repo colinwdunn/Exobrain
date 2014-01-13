@@ -12,10 +12,11 @@
 
 @protocol NodeViewDelegate;
 
-@interface NodeView : UIView
+@interface NodeView : UIView <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic, strong) Node *node;
+@property (nonatomic, strong) NSString *text;
 @property (nonatomic, weak) id<NodeViewDelegate> delegate;
 
 @end

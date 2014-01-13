@@ -87,10 +87,12 @@
     
     NodeView *view = [[NodeView alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
     view.node = node;
-    view.textField.text = string;
+    view.text = string;
     view.center = center;
     [self.nodeViews addObject:view];
     [self.view addSubview:view];
+    
+    [view.textField becomeFirstResponder];
     
     return node;
 }

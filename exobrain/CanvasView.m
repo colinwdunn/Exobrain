@@ -89,6 +89,13 @@
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"touches cancelled");
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    
+    UIView *touchedView = [self hitTest:location withEvent:event];
+    if (self.sourceNode == touchedView) {
+        [self.sourceNode.textField becomeFirstResponder];
+    }
     
     self.sourceNode.backgroundColor = self.savedColor;
     self.savedColor = nil;
@@ -102,10 +109,11 @@
     CGPoint location = [touch locationInView:self];
     
     UIView *touchedView = [self hitTest:location withEvent:event];
-    if ([touchedView isKindOfClass:[NodeView class]]) {
+    if (self.sourceNode == touchedView) {
+        [self.sourceNode.textField becomeFirstResponder];
+    } else if ([touchedView isKindOfClass:[NodeView class]]) {
         [self.sourceNode.node linkToNode:((NodeView *)touchedView).node];
     } else {
-        // Create and connect node
         Node *node = [self.canvasViewController createNodeWithCenter:location];
         [self.sourceNode.node linkToNode:node];
     }

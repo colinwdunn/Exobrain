@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="73"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New idea" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="QZD-x2-oyb">
-                    <rect key="frame" x="5" y="25" width="190" height="24"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New idea" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="QZD-x2-oyb">
+                    <rect key="frame" x="10" y="25" width="180" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -26,8 +26,8 @@
             </subviews>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="QZD-x2-oyb" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="5" id="TDX-Vt-dky"/>
-                <constraint firstAttribute="trailing" secondItem="QZD-x2-oyb" secondAttribute="trailing" constant="5" id="kfS-QH-UuT"/>
+                <constraint firstItem="QZD-x2-oyb" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="TDX-Vt-dky"/>
+                <constraint firstAttribute="trailing" secondItem="QZD-x2-oyb" secondAttribute="trailing" constant="10" id="kfS-QH-UuT"/>
                 <constraint firstAttribute="centerY" secondItem="QZD-x2-oyb" secondAttribute="centerY" id="p8M-hg-Imb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
